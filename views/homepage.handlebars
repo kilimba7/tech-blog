@@ -1,0 +1,15 @@
+<ol class="post-list">
+    {{#each posts as |post|}}
+  <li>
+    <article class="post">
+      <div class="title">
+        <textarea name="content-body">by {{post.user.username}}</textarea>
+      </div>
+      <div class="meta">
+        {{post.created_at}}
+        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+      </div>
+    </article>
+  </li>
+  {{/each}}
+</ol>
