@@ -1,5 +1,9 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    --primary:#22a351;
+    --secondary: rgb(0, 166, 255);
+    --tertiary: white;
   }
   
   body, html {
@@ -12,28 +16,31 @@
   
   a {
     text-decoration: none;
-    color: #22a351;
+    color: var(--primary);
     font-weight: bold;
     transition: color .1s;
   }
   
   a:hover {
-    color: #3486eb;
+    color: var(--primary);
   }
   
   button {
-    background-color: #225ca3;
+    background-color: var(--primary);
     border: 0;
     padding: 1%;
-    color: white;
+    color: var(--tertiary);
     font-weight: bold;
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
   }
+  h2 {
+    color: var(--tertiary);
+  }
   
   button:hover {
-    background-color: #3486eb;
+    background-color: var(--primary);
   }
   
   .post-list {
@@ -44,12 +51,12 @@
   textarea, input {
     padding: .5%;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--tertiary);
   }
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid var(--primary);
   }
   
   textarea {
@@ -75,7 +82,7 @@
   }
   
   header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--tertiary);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,6 +97,15 @@
     flex: 1;
     padding: 2% 4%;
   }
+
+  .title {
+    background-color: var(--primary);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+  }
   
   .btn-no-style {
     background: none;
@@ -97,7 +113,7 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: var(--primary);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -106,7 +122,7 @@
   
   .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: var(--primary);
   }
   
   .delete-post-btn {
@@ -118,14 +134,20 @@
   }
   
   .post {
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     line-height: 150%;
+    border: 1px solid var(--primary);
+  }
+
+  .post-content {
+    padding: 1.5rem;
   }
   
   .post .title span {
     font-style: italic;
     font-size: 90%;
-    color: #7d7d7d;
+    color: var(--tertiary);
+
   }
   
   .edit-link {
