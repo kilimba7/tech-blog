@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
@@ -34,6 +35,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// get a single user
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -73,8 +75,8 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+// Can only post if logged in
+router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     content: req.body.content,
@@ -87,8 +89,8 @@ router.post('/', (req, res) => {
     });
 });
 
-
-router.put('/:id', (req, res) => {
+// Can only edit if logged in 
+router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title
@@ -112,7 +114,8 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+// Can only delete if logged in 
+router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id

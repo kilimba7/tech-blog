@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     --primary:#22a351;
-    --secondary: rgb(0, 166, 255);
+    --secondary: rgb(217, 175, 175);
     --tertiary: white;
   }
   
@@ -51,7 +51,7 @@
   textarea, input {
     padding: .5%;
     border-radius: 5px;
-    border: 1px solid var(--tertiary);
+    border: 1px solid var(--primary);
   }
   
   textarea:focus, input:focus {
@@ -165,7 +165,7 @@
   }
   
   .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: var(--secondary);
   }
   
   .comment .meta {
@@ -178,6 +178,9 @@
     width: 300px;
   }
   
+  .create-new {
+    color: var(--primary);
+  }
   .edit-post-form {
     margin-bottom: 5%;
   }
