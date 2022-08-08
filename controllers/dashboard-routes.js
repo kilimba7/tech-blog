@@ -43,10 +43,7 @@ router.get('/', withAuth, (req, res) => {
 
   // Can only edit and delete posts if logged in (this will be done through the dashboard)
   router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
-        where: {
-          id: req.params.id
-        },
+    Post.findByPk(req.params.id, {
         attributes: [
         'id',
         'content',
