@@ -17,7 +17,7 @@ const commentdata = [
     post_id: 1
   },
   {
-    comment_text: 'Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
+    comment_text: 'Nice Recipe',
     user_id: 3,
     post_id: 1
   },
